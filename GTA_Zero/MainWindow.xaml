@@ -4,30 +4,24 @@
 <Window x:Class="GTA_Zero.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GTA Zero" Height="700" Width="1000"
+Title="GTA Zero" Height="720" Width="1050"
         KeyDown="Window_KeyDown" KeyUp="Window_KeyUp"
-        MouseMove="Window_MouseMove" MouseDown="Window_MouseDown">
+        MouseMove="Window_MouseMove" MouseDown="Window_MouseDown" MouseUp="Window_MouseUp">
     <Grid>
         <Canvas x:Name="ViewportCanvas" Background="#1E1E1E" ClipToBounds="True">
 
             <!-- 2000x2000 City Map -->
-            <Canvas x:Name="WorldCanvas" Width="2000" Height="2000" Background="#2B2B2B">
-                <!-- Streets -->
-                <Rectangle Canvas.Left="0" Canvas.Top="250" Width="2000" Height="140" Fill="#444444"/>
-                <Rectangle Canvas.Left="0" Canvas.Top="950" Width="2000" Height="140" Fill="#444444"/>
-                <Rectangle Canvas.Left="0" Canvas.Top="1700" Width="2000" Height="140" Fill="#444444"/>
-                <Rectangle Canvas.Left="380" Canvas.Top="0" Width="140" Height="2000" Fill="#444444"/>
-                <Rectangle Canvas.Left="1180" Canvas.Top="0" Width="140" Height="2000" Fill="#444444"/>
-            </Canvas>
+            <Canvas x:Name="WorldCanvas" Width="2000" Height="2000" Background="#2B2B2B"/>
 
             <!-- Top-Left HUD -->
             <Border Background="#CC000000" CornerRadius="6" Padding="12" Canvas.Left="15" Canvas.Top="15">
                 <StackPanel>
                     <TextBlock x:Name="ScoreText" Foreground="Gold" FontSize="18" FontWeight="Bold" Text="SCORE: $0"/>
                     <TextBlock x:Name="WantedText" Foreground="DeepSkyBlue" FontSize="15" FontWeight="Bold" Text="WANTED: ☆ ☆ ☆ ☆ ☆"/>
+                    <TextBlock x:Name="WeaponText" Foreground="Orange" FontSize="14" FontWeight="Bold" Text="WEAPON: PISTOL (∞)"/>
                     <TextBlock x:Name="CarHpText" Foreground="LightGreen" FontSize="13" Text="ON FOOT"/>
-                    <TextBlock Foreground="#CCCCCC" FontSize="12" Margin="0,6,0,0"
-                               Text="WASD: Move/Drive | Mouse: Aim &amp; Shoot | F: Enter/Exit Car | R: Restart"/>
+                    <TextBlock Foreground="#CCCCCC" FontSize="11.5" Margin="0,6,0,0"
+                               Text="WASD: Move/Drive | Left-Click (Hold): Shoot | F: Enter/Exit Car | R: Restart"/>
                 </StackPanel>
             </Border>
 
